@@ -1,0 +1,242 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="favicon.png" />
+    <title>Vanilla JS Animation</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap");
+      * {
+        box-sizing: border-box;
+        font-family: "Montserrat", sans-serif;
+      }
+      body {
+        margin: 0;
+        padding: 0;
+        background-color: #222;
+      }
+      main {
+        padding: 10px 10px 0;
+      }
+      h1 {
+        text-align: center;
+        margin: 0;
+        padding: 30px;
+      }
+      h1 a {
+        color: #fff;
+        font-size: 30px;
+        line-height: 1.6;
+        display: inline-block;
+        font-weight: normal;
+        font-weight: 700;
+      }
+      h1 a strong {
+        color: yellow;
+        font-weight: 800;
+      }
+      .hero {
+        padding: 10px;
+        border-radius: 4px;
+        background-color: #333;
+      }
+      .hero ul {
+        display: flex;
+        flex-wrap: wrap;
+        list-style: none;
+        justify-content: center;
+        padding: 0;
+        margin: 0;
+        counter-reset: section;
+        list-style-type: none;
+      }
+      .hero ul li {
+        padding: 0;
+        flex: 0 0 auto;
+        width: 20%;
+        position: relative;
+        border: 2px solid #444;
+      }
+      .hero ul li::before {
+        color: #fff;
+        font-size: 16px;
+        font-weight: 600;
+        position: absolute;
+        left: 0;
+        top: 0;
+        counter-increment: section;
+        content: counters(section, ".") ". ";
+        background: #222;
+        width: 50px;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 0;
+        transition: all 1s ease;
+      }
+      .hero ul li:hover::before {
+        color: #000;
+        background: #d1d100;
+      }
+      .hero ul li a {
+        display: flex;
+        color: #fff;
+        font-size: 16px;
+        font-weight: 600;
+        padding: 10px 10px 10px 60px;
+        border-radius: 0;
+        text-decoration: none;
+        background-color: #000;
+        transition: all 1s ease;
+        height: 100%;
+        align-items: center;
+        width: 100%;
+        text-transform: capitalize;
+      }
+      .hero ul li:hover a {
+        color: #000;
+        background-color: #ffff00;
+      }
+      /* width */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+
+      /* Track */
+      ::-webkit-scrollbar-track {
+        background: #000;
+      }
+
+      /* Handle */
+      ::-webkit-scrollbar-thumb {
+        background: #333;
+      }
+
+      /* Handle on hover */
+      ::-webkit-scrollbar-thumb:hover {
+        background: #333;
+      }
+      .new-box-wrap {
+        background-color: #333;
+        width: 100%;
+        padding: 20px;
+        margin-top: 30px;
+      }
+      .new-box-wrap p {
+        color: #fff;
+        font-size: 28px;
+        font-weight: 800;
+        margin: 0 0 10px;
+        text-align: center;
+      }
+      .new-box-wrap-btns {
+        display: flex;
+        flex-wrap: wrap;
+        list-style: none;
+        justify-content: center;
+        padding: 0;
+        margin: 0;
+      }
+      .new-box-wrap-btns li {
+        padding: 4px;
+        flex: 0 0 auto;
+      }
+      .new-box-wrap-btns li a {
+        display: flex;
+        color: #fff;
+        font-size: 16px;
+        padding: 10px 30px;
+        border-radius: 100px;
+        text-decoration: none;
+        background-color: #000;
+        transition: all 1s ease;
+        height: 100%;
+        align-items: center;
+        width: 100%;
+        font-weight: 600;
+      }
+      .new-box-wrap-btns li a:hover {
+        color: #000;
+        background-color: yellow;
+      }
+      @media screen and (max-width: 767px) {
+        main,
+        .hero {
+          padding: 10px;
+        }
+        .hero ul {
+          flex-direction: column;
+        }
+        .hero ul li {
+          width: 100%;
+        }
+        .new-box-wrap p {
+          font-size: 20px;
+          font-weight: 600;
+        }
+      }
+      @media screen and (min-width: 768px) and (max-width: 1200px) {
+        .hero ul li {
+          width: 33.33333%;
+        }
+        .new-box-wrap p {
+          font-size: 20px;
+          font-weight: 700;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>
+        <a> <strong>GSAP </strong> Projects</a>
+      </h1>
+      <section class="hero">
+        <ul>
+          <li>
+            <a href="01-animated-Search-Box" target="_blank">  Animated Search Box </a>
+          </li>
+          <li>
+            <a href="02-Custom-Skills-Bar" target="_blank">  Custom Skills Bar</a>
+          </li>
+          <li>
+            <a href="03-Mousemove-Animation" target="_blank">   Mousemove Animation</a>
+          </li>
+          <li>
+            <a href="04-Complex-CSS-Loading-Animation" target="_blank">  Complex CSS Loading Animation</a>
+          </li>
+       
+          <li>
+            <a href="05-scroll-loop" target="_blank"> scroll loop</a>
+          </li>
+          <li>
+            <a href="06-sticker-collector" target="_blank"> sticker collector  </a>
+          </li>
+          <li>
+            <a href="07-image-accordion" target="_blank"> image accordion </a>
+          </li>
+          <li>
+            <a href="08-responsive-light-box-gallery" target="_blank"> responsive light box gallery</a>
+          </li>
+          <li>
+            <a href="09-minimal-form-interface" target="_blank"> minimal form interface </a>
+          </li>
+          <li>
+            <a href="10-fullscreen-form-interface" target="_blank"> fullscreen form interface</a>
+          </li>
+          <li>
+            <a href="" target="_blank"> </a>
+          </li>
+          <li>
+            <a href="" target="_blank"></a>
+          </li>
+        </ul>
+      </section>
+    </main>
+   
+  
+   
+  </body>
+</html>
